@@ -1,0 +1,33 @@
+@import '../../index.scss';
+
+.nav {
+    position: fixed;
+    margin: 0;
+    background-color: $primary-color;
+    color: $text-color;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 128px;
+
+    &__header {
+        font-weight: 600px;
+        padding: 4px;
+        color: $text-color;
+    }
+
+    .buttons {
+        @include btn;
+    }
+    .btn-dark {
+        background-color: $background-color-light;
+        color: $text-color;
+    }
+    .btn-outlined {
+        background-color: transparent;
+        color: $text-color;
+    }
+}

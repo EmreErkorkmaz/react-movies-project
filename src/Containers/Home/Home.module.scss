@@ -1,0 +1,25 @@
+@import '../../index.scss';
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 129px;
+    width: 100%;
+    background-color: $background-color-light;
+    height: 59px;
+    display: flex;
+    align-items: center;
+
+    h2{
+        color: $text-color;
+    }
+}
+
+.container {
+    @include container;
+    margin-top: 50px;
+    a {
+        color: $background-color-light;
+    }
+}
