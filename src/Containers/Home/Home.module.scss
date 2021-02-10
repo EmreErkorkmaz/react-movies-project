@@ -23,3 +23,9 @@
         color: $background-color-light;
     }
 }
+
+@media screen and (max-width: 1300px) {
+    a {
+        margin: 0 20px;
+    }
+}
