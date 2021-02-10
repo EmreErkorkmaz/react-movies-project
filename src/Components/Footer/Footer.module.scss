@@ -33,16 +33,17 @@
     .footer__social {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       margin-right: 131px;
       &__left {
-          width: 120px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          img {
-              height: 30px;
-              cursor: pointer;
-          }
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+          height: 30px;
+          cursor: pointer;
+        }
       }
       &__right {
         width: 420px;
@@ -50,8 +51,20 @@
         justify-content: space-between;
         align-items: center;
         img {
-            height: 40px;
-            cursor: pointer;
+          height: 40px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1020px) {
+  .container {
+    .footer__content {
+      margin: 10px 0 0 20px;
+      .footer__social {
+        &__right {
+          margin-top: 20px;
         }
       }
     }

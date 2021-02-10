@@ -37,7 +37,6 @@ const Movies = (props: any) => {
     setSearchValue(event.target.value);
     if(searchValue.length > 1){
 
-      console.log('search value: ' + searchValue)
       const filteredArray = contents.filter((content: any) => content.title.toLowerCase().includes(searchValue.toLowerCase()));
       setContents(filteredArray);
       console.log(filteredArray)
@@ -51,13 +50,13 @@ const Movies = (props: any) => {
   return (
     <>
       <div className={styles["filter-section"]}>
-        <div>
+        <div className={styles['search-input']}>
           <input
             placeholder="Search..."
             value={searchValue}
             onChange={searchHandler}
           />
-          <button>
+          <button className={styles.icon}>
             <i className="fa fa-search" style={{ color: "white" }}></i>
           </button>
         </div>
