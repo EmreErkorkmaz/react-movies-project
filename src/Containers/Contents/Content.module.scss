@@ -1,8 +1,44 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
 .filter-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 129px * 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  input {
+    width: 433px;
+    height: 37px;
+  }
+
+  button {
+    padding: 11px 11px;
+    background-color: $primary-color;
+    cursor: pointer;
+    outline: none;
+  }
+
+  select {
+    width: 200px;
+    height: 37px;
+    text-align: center;
+    align-self: center;
+  }
 }
+
+.container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 175px);
+  row-gap: 60px;
+  justify-items: center;
+  height: calc(100vh - 400px);
+  overflow-y: auto;
+}
+
+@media (min-width: 1500px) {
+  .container {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+

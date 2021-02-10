@@ -1,8 +1,11 @@
 .layout-page {
     position: absolute;
     top: 60px;
-    height: auto;
+    height: 100vh;
     width: 100%;
-    bottom: 218px;
-    padding: 34px 129px 0 129px;
+    bottom: 218px; 
+}
+
+.container {
+    margin: 30px 140px 0 140px;
 }

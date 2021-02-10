@@ -12,5 +12,6 @@
   @mixin  container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 190px);
+    
     row-gap: 60px;
   }

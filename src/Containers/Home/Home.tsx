@@ -14,7 +14,7 @@ const Home = (props: any) => {
         <Link to={"/series"}>
           <CardItem title="Popular Series" image={placeholder} />
         </Link>
-        <Link to={"/movies"}>
+        <Link to={"/movie"}>
           <CardItem title="Popular Movies" image={placeholder} />
         </Link>
       </div>
