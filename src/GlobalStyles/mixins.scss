@@ -1,17 +1,17 @@
 @mixin btn {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border: none;
-    outline: none;
-  
-    &:hover {
-      color: $footer-text-color;
-    }
-  }
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
 
-  @mixin  container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 190px);
-    
-    row-gap: 60px;
+  &:hover {
+    color: $footer-text-color;
   }
+}
+
+@mixin container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 190px);
+  justify-items: center;
+  row-gap: 60px;
+}

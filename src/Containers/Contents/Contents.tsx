@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Content.module.scss";
 import CardItem from "../../Components/CardItem/CardItem";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Movies = (props: any) => {
   const { match, history } = props;
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState(" ");
   const [sortValue, setSortValue] = useState("year-asc");
   const [contents, setContents] = useState([]);
   const [contentType] = useState(match.params.type);
@@ -13,7 +13,6 @@ const Movies = (props: any) => {
 
   const movies = useSelector((state: any) => state.contents.movies);
   const series = useSelector((state: any) => state.contents.series);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,7 +24,7 @@ const Movies = (props: any) => {
       history.push("/");
     }
     const timer = setTimeout(() => {
-      setSearchValue(' ');
+      setSearchValue('');
       setIsLoading(false);
     }, 500)
 
