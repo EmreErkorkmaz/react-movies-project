@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Content.module.scss";
 import CardItem from "../../Components/CardItem/CardItem";
 import { useDispatch, useSelector } from "react-redux";
+import * as actionTypes from '../../store/actions/actionTypes';
 
 const Movies = (props: any) => {
   const { match, history } = props;
@@ -20,7 +21,7 @@ const Movies = (props: any) => {
     setIsLoading(true);
     if (contentType === "movie" || contentType === "series") {
         dispatch({
-            type: "CONTENT_TYPE",
+            type: actionTypes.CONTENT_TYPE,
             payload : {
                 contentType: contentType
             }
@@ -53,7 +54,7 @@ const Movies = (props: any) => {
   useEffect(() => {
     setDisableOption(true);
     dispatch({
-      type: "SORT_CONTENTS",
+      type: actionTypes.SORT_CONTENTS,
       payload: {
         sortValue: sortValue
       }

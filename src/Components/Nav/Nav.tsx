@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.scss";
+import * as actionTypes from '../../store/actions/actionTypes';
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -13,13 +14,13 @@ const Nav = () => {
 
   const login = () => {
     dispatch({
-      type: "LOGIN"
+      type: actionTypes.LOGIN
     });
   }
   const logout = () => {
 
     dispatch({
-      type: "LOGOUT"
+      type: actionTypes.LOGOUT
     });
   }
 

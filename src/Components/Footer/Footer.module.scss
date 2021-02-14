@@ -7,6 +7,7 @@
   height: 218px;
   background-color: $background-color-dark;
   line-height: 2;
+  overflow-y: auto;
 
   .footer__content {
     margin: 42px 0 0 131px;
@@ -49,6 +50,7 @@
         width: 420px;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
         img {
           height: 40px;
@@ -63,10 +65,15 @@
     .footer__content {
       margin: 10px 0 0 20px;
       .footer__social {
-        &__right {
+        &__right > * {
           margin-top: 20px;
         }
       }
     }
   }
+}
+@media screen and (max-width: 350px) {
+  .footer__social__left > * {
+    margin: 0 20px;
+  } 
 }
