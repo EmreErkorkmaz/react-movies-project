@@ -12,17 +12,14 @@ const Footer = () => {
     <div className={styles.container}>
       <section className={styles["footer__content"]}>
         <div className={styles["footer__nav"]}>
-          <Link to="/">Home</Link>
-          {` | `}
-          <Link to="/">Terms and Conditions</Link>
-          {` | `}
-          <Link to="/">Privacy Policy</Link>
-          {` | `}
-          <Link to="/">Collection Statement</Link>
-          {` | `}
-          <Link to="/">Help</Link>
-          {` | `}
-          <Link to="/">Manage Account</Link>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">Terms and Conditions</Link></li>
+            <li><Link to="/">Privacy Policy</Link></li>
+            <li><Link to="/">Collection Statement</Link></li>
+            <li><Link to="/">Help</Link></li>
+            <li><Link to="/">Manage Account</Link></li>
+          </ul>
         </div>
         <p>Copyright © 2016 DEMO Streaming. All Rights Reserved.</p>
         <div className={styles["footer__social"]}>

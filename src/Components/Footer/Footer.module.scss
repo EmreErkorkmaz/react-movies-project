@@ -16,16 +16,27 @@
     .footer__nav {
       font-size: $fontsize;
 
-      a {
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-
-        &:hover {
-          color: $hover-color;
+      ul {
+        margin: 0 -45px; 
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        li {
+          list-style: none;
+          padding: 0 0 0 5px;
+          margin-right: 5px;
+          a {
+            border-right: 1px solid $footer-text-color;
+            margin: 0;
+            padding-right: 10px;
+            &:hover {
+              color: $hover-color;
+            }
+          }
         }
-        &:first-child {
-          margin-left: 0;
-        }
+      }
+      li:last-child a {
+        border-right: none;
       }
     }
     p {
