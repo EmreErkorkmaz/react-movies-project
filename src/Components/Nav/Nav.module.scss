@@ -20,20 +20,123 @@
     color: $text-color;
   }
 
-  .buttons {
-    @include btn;
+
+  .menu__list {
+    position: relative;
+    ul {
+      list-style: none;
+      display: flex;
+    }
   }
-  .btn-dark {
-    background-color: $background-color-light;
-    color: $text-color;
+}
+
+.menu {
+  position: absolute;
+  z-index: 30;
+  right: 1rem;
+  top: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  @include transition-ease;
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: $text-color;
+    @include transition-ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      width: 28px;
+      height: 3px;
+      background: $text-color;
+      @include transition-ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 20px;
+      height: 3px;
+      background: $text-color;
+      @include transition-ease;
+    }
+
+    &.open {
+      transform: rotate(720deg);
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
+      }
+      &::after {
+        width: 28px;
+        transform: rotate(-45deg) translate(2.5px, -7px);
+      }
+    }
   }
-  .btn-outlined {
-    background-color: transparent;
-    color: $text-color;
+}
+
+.buttons {
+  @include btn;
+  &:hover {
+    color: orange;
   }
-  .danger {
-    background-color: red;
+}
+.btn-dark {
+  background-color: $background-color-light;
+  color: $text-color;
+}
+.btn-outlined {
+  background-color: transparent;
+  color: $text-color;
+}
+.danger {
+  background-color: red;
+}
+
+@media (min-width: 900px) {
+  .menu {
+    display: none;
   }
+}
+@media (max-width: 900px) {
+ .nav {
+  .menu__list {
+    @include transition-ease;
+    position: absolute;
+    height: 92vh;
+    width: 100%;
+    background-color: $background-color-dark;
+    top: 8vh;
+    &.show__nav {
+      left: 0;
+    }
+    &.close__nav {
+      left: -100%;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+      position: relative;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      li {
+        margin: 1rem 0;
+      }
+    }
+  }
+ }
 }
 
 @media screen and (max-width: 920px) {
@@ -45,14 +148,15 @@
 @media screen and (max-width: 650px) {
   .nav {
     &__header {
-        font-size: 20px;
+      font-size: 20px;
     }
   }
 }
 
-@media screen and (max-width: 350px) {
-  .buttons, .btn-dark {
-    font-size: 10px;
-    padding: -1rem -0.5rem;
-  }
-}
+// @media screen and (max-width: 350px) {
+//   .buttons,
+//   .btn-dark {
+//     font-size: 10px;
+//     padding: -1rem -0.5rem;
+//   }
+// }
